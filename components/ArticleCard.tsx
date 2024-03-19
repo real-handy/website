@@ -24,7 +24,6 @@ export default function ArticleCard(props: { article: Article }) {
       <div className="my-2 md:m-4 mx-1">
         <h3 className="text-lg font-semibold leading-6 text-indigo-500 hover:text-indigo-700">
           <a href={`/articles/${article.slug}`}>
-            <span className="absolute inset-0" />
             {article.title}
           </a>
         </h3>
