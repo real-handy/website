@@ -1,12 +1,11 @@
 import { useState } from 'preact/hooks'
-import { Dialog } from '@headlessui/react'
 import IconMenu from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/menu-2.tsx"
 import IconX from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/x.tsx"
 
 const navigation = [
   { name: 'Home', href: '/#' },
   { name: 'Articles', href: '/articles' },
-  { name: 'Work Together', href: '/contact' },
+  { name: 'Work Together', href: '/work-together' },
   { name: 'About', href: '/about' },
 ]
 

@@ -1,5 +1,6 @@
 import Hero from '../components/Hero.tsx'
 import Roles from '../components/Roles.tsx'
+import Conversations from '../components/Conversations.tsx'
 import Form from '../islands/WorkForm.tsx'
 
 const stats = [
@@ -33,6 +34,7 @@ export default function Index() {
           </dl>
         </div>
       <Roles />
+      <Conversations />
       <Form />
     </main>
   )
