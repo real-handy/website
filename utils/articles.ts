@@ -1,7 +1,7 @@
 import { extract } from "https://deno.land/std@0.219.0/front_matter/any.ts";
 import { join } from "https://deno.land/std@0.219.0/path/posix/join.ts";
 
-const DIRECTORY = "./";
+const DIRECTORY = "./articles";
 
 export interface Article {
   slug: string;
