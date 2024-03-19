@@ -70,9 +70,10 @@ export default function Roles() {
   return(
     <div className="relative bg-indigo-100 lg:pt-14">
       <div className="m-8 pt-16 max-w-7xl ">
-      <h1 className="text-2xl font-bold text-indigo-400">Role Comparision</h1>
+      <h1 className="text-2xl font-bold text-indigo-400 mb-8">Role Comparison</h1>
+      <p>There are many reasons why it's best to hire leadership in-house, creating a permanent relationship and commitment. There are times when fractional workers make sense. When part-time flexibility and pin-point role clarity is more importnant than commitment.</p>
       </div>
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-8 sm:py-18 lg:px-8">
         <section aria-labelledby="mobile-comparison-heading" className="lg:hidden">
           <h2 id="mobile-comparison-heading" className="sr-only">Role Comparison</h2>
           <div className="mx-auto max-w-2xl space-y-16">
