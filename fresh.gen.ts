@@ -8,9 +8,9 @@ import * as $articles_slug_ from "./routes/articles/[slug].tsx";
 import * as $articles_layout from "./routes/articles/_layout.tsx";
 import * as $articles_index from "./routes/articles/index.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $Button from "./islands/Button.tsx";
+import * as $work_together from "./routes/work-together.tsx";
 import * as $Header from "./islands/Header.tsx";
-import * as $Input from "./islands/Input.tsx";
+import * as $WorkForm from "./islands/WorkForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -21,11 +21,11 @@ const manifest = {
     "./routes/articles/_layout.tsx": $articles_layout,
     "./routes/articles/index.tsx": $articles_index,
     "./routes/index.tsx": $index,
+    "./routes/work-together.tsx": $work_together,
   },
   islands: {
-    "./islands/Button.tsx": $Button,
     "./islands/Header.tsx": $Header,
-    "./islands/Input.tsx": $Input,
+    "./islands/WorkForm.tsx": $WorkForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

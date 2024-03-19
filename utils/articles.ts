@@ -1,7 +1,7 @@
 import { extract } from "https://deno.land/std@0.219.0/front_matter/any.ts";
 import { join } from "https://deno.land/std@0.219.0/path/posix/join.ts";
 
-const DIRECTORY = "./articles";
+const DIRECTORY = "./";
 
 export interface Article {
   slug: string;
@@ -9,6 +9,7 @@ export interface Article {
   publishedAt: Date;
   content: string;
   snippet: string;
+  tags: Array<string>;
 }
 
 export async function getArticles(): Promise<Article[]> {
@@ -28,9 +29,10 @@ export async function getArticle(slug: string): Promise<Article | null> {
   const { attrs, body } = extract(text);
   return {
     slug,
-    title: attrs.title,
-    publishedAt: new Date(attrs.published_at),
+    title: attrs.title as string,
+    publishedAt: new Date(attrs.published_at as string),
     content: body,
-    snippet: attrs.snippet
+    snippet: attrs.snippet as string,
+    tags: attrs.tags as Array<string>
   };
 }
