@@ -8,7 +8,6 @@ export default async function Layout(req: Request, ctx: FreshContext) {
     <main class="bg-gray-900 bg-center bg-repeat bg-[url('bg.svg')]">
       <Header />
       <ctx.Component/>
-      <Footer />
     </main>
   );
 }
