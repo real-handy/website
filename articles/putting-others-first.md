@@ -15,7 +15,7 @@ tags:
 
 True leadership is not about power or authority, but about service and putting the needs of others first. This is the core philosophy of servant leadership, a leadership approach that prioritizes the growth and well-being of team members over the self-interest of the leader.
 
-As a servant leader, your primary focus is on empowering and enabling your team to achieve their full potential. You take a hands-on approach, working alongside your team members, providing support, guidance, and removing obstacles that may hinder their progress.
+As a servant leader, your primary focus is on empowering and enabling your team to achieve their full potential. You take a hands-on approach, working alongside your team members, providing support, and guidance, and removing obstacles that may hinder their progress.
 
 One of the key principles of servant leadership is active listening. By truly listening to your team members' ideas, concerns, and feedback, you gain valuable insights that can inform your decision-making and help you better understand their needs.
 

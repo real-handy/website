@@ -7,7 +7,7 @@ tags:
   - leadership
   - servant leadership
   - mentoring
-  - project managment
+  - project management
 
 ---
 

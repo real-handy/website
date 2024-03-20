@@ -7,7 +7,7 @@ tags:
   - leadership
 
 ---
-### Even the biggest tech giants like Google, Apple, and Amazon have had their share of failed projects that wasted millions. While failure is an inevitable part of innovation, there are some common pitfalls that increase the risk of your tech project going off the rails.
+### Even the biggest tech giants like Google, Apple, and Amazon have had their share of failed projects that wasted millions. While failure is an inevitable part of innovation, some common pitfalls increase the risk of your tech project going off the rails.
 
 ## Lack of Clear Vision and Requirements
 
@@ -41,9 +41,9 @@ Realistically assess your existing team's capabilities against what's required. 
 
 ## Poor Project Management and Prioritization
 
-Even with a strong team, tech projects can veer off-target without disciplined project management. Failure to prioritize what's important, set benchmarks, and make judicious cuts can lead to aimless progression and wasteful effort.
+Even with a strong team, tech projects can veer off-target without disciplined project management. Failure to prioritize what's important set benchmarks, and make judicious cuts can lead to aimless progression and wasteful effort.
 
 ### The fix
-Adopt agile development principles like sprints, daily standups, and frequent reprioritization to maintain focus and momentum. Appoint a skilled manager to oversee schedule, tasks, and make hard decisions to cut out scope creep. Constant communication is key.
+Adopt agile development principles like sprints, daily standups, and frequent reprioritization to maintain focus and momentum. Appoint a skilled manager to oversee the schedule, and tasks, and make hard decisions to cut out scope creep. Constant communication is key.
 
 While even great teams will experience some level of failure in ambitious tech projects, avoiding these common pitfalls will increase your odds of shipping something successful. With proper vision, user validation, technical foresight, the right talent, and diligent management, your next project has a much better chance of beating the odds.
