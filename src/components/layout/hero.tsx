@@ -19,7 +19,7 @@ export default function Hero() {
           <p className="mt-6 text-lg leading-8 text-gray-300">Empower your business with strategic technology leadership, minus the overhead. Our experts specializes in guiding startups through complex choices, efficantly, </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">Crafting tailored tech roadmaps and optimizing digital infrastructure, we turn your vision into reality. Scale smarter with Real Handy Tech by your side.</p>
           <h2 className="mt-6 text-lg font-semibold leading-8 text-indigo-400">A Simple Promise</h2>
-          <p className="mt-6 text-sm leading-8 text-gray-300">We strictly maintain confidentiality on all client engagements, we won't even share your name for our marketing needs. That's <span className="font-thin">REAL</span> <span className="font-bold">HANDY</span></p>
+          <p className="mt-6 text-sm leading-8 text-gray-300">We strictly maintain confidentiality on all client engagements, we won&#39;t even share your name for our marketing needs. That&#39;s <span className="font-thin">REAL</span> <span className="font-bold">HANDY</span></p>
 
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
