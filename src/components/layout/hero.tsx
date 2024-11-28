@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden">
+    <div id="top" className="relative isolate overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-10 sm:pb-24 lg:flex lg:px-8 lg:pt-40">
         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
           <svg className="size-32 md:size-64" viewBox="0 0 575 440" fill="none" xmlns="http://www.w3.org/2000/svg">
