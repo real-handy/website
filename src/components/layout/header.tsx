@@ -1,4 +1,7 @@
+'use client'
+
 import { Menu } from "lucide-react"
+import { useScrollHandler } from '@/lib/hooks/scroll-to'
 
 type NavigationLinks = {
   label: string
@@ -11,11 +14,13 @@ interface HeaderProps {
 }
 
 export const Header = (props: HeaderProps) => {
+  const handleClick = useScrollHandler({ offset: 80 });
+
   return (
-    <header className="bg-gray-900">
+    <header id="top" className="bg-gray-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="/#" className="-m-1.5 p-1.5 md:hidden">
+          <a href="#top" className="-m-1.5 p-1.5 md:hidden" onClick={handleClick}>
             <span className="sr-only">Real Handy Tech</span>
             <svg className="size-16" viewBox="0 0 575 440" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M376 220C376 341.503 291.83 440 188 440C84.1705 440 0 341.503 0 220C0 98.4974 84.1705 0 188 0C291.83 0 376 98.4974 376 220Z" fill="#F59E0B"/>
@@ -39,7 +44,12 @@ export const Header = (props: HeaderProps) => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {props.navigation.map((item) => (
-            <a key={item.label} href={item.href} className="text-sm font-semibold leading-6 text-indigo-100">
+            <a 
+              key={item.label} 
+              href={item.href} 
+              onClick={handleClick}
+              className="text-sm font-semibold leading-6 text-indigo-100"
+            >
               {item.label}
             </a>
           ))}

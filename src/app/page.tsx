@@ -17,12 +17,10 @@ export default async function Home() {
       <Header 
         title="real handy" 
         navigation={[
-          { label: "home", href: '/' },
-          { label: "roles", href: '/#roles' },
-          { label: "conversations", href: '/conversations' },
-          { label: "connect", href: '/#connect' },
-          { label: "mentoring", href: '/connect#mentoring' },
-          { label: "coaching", href: '/connect#coaching'},
+          { label: "home", href: '#top' },
+          { label: "roles", href: '#roles' },
+          { label: "conversations", href: '#conversations' },
+          { label: "connect", href: '#connect' },
         ]}
       />
       <main className="bg-gray-900 bg-center bg-repeat bg-[url('bg.svg')]">

@@ -12,7 +12,7 @@ export const RandomConversations = async() => {
   const three = pickRandomItems(articles, 3);
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <div id="conversations" className="mx-auto max-w-5xl">
       <div className="my-16">
         <h2 className="text-4xl font-bold tracking-12 text-amber-500 sm:text-5xl">Conversations</h2>
         <p className="mt-2 text-lg leading-8 text-gray-400">
