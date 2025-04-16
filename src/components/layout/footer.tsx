@@ -7,8 +7,8 @@ export default function Footer() {
       children: [
         { name: "starter conversations", href: "/conversations" },
         { name: "common mistakes", href: "/common-mistakes" },
-        { name: "smart intent", href: "#"},
-        { name: "question everything", href: "#"}
+        { name: "smart intent", href: "/smart-intent" },
+        { name: "question everything", href: "/question-everything" },
       ],
     },
     {
@@ -17,7 +17,7 @@ export default function Footer() {
         { name: "Say Hi", href: "/connect" },
         { name: "mentoring", href: "/mentoring" },
         { name: "coaching", href: "/coaching" },
-        { name: "fractional practice", href: "fractional" },
+        { name: "fractional practice", href: "/fractional" },
       ],
     },
   ];
@@ -79,6 +79,13 @@ export default function Footer() {
           aria-label="GitHub"
         >
           <Github aria-hidden="true" />
+        </a>
+
+        <a
+          href="https://discord.com/invite/real-handy"
+          className="inline-block hover:text-black"
+          aria-label="Discord"
+        >
         </a>
       </div>
     </div>
