@@ -1,10 +1,11 @@
 import Footer from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Common Mistakes That Cause Tech Startup Failures | Real Handy",
-  description: "Explore six critical pitfalls that lead to tech startup failures and how to avoid them.",
+  title: "Common Startup Mistakes | Real Handy",
+  description: "Learn about the most common mistakes first-time founders make and how to avoid them.",
 };
 
 export default function CommonMistakesPage() {
@@ -25,11 +26,11 @@ export default function CommonMistakesPage() {
           <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-8">
-                Why Tech Startups Fail
+                Common Mistakes
               </h1>
-              <div className="h-2 w-40 bg-amber-500 mx-auto rounded-full mb-8"></div>
+              <div className="h-2 w-40 bg-indigo-500 mx-auto rounded-full mb-8"></div>
               <p className="mt-6 text-xl leading-8 text-gray-300">
-                Learn the six most common mistakes that lead to tech startup failures and how to navigate around these pitfalls for sustainable growth.
+                What we&apos;ve learned from helping hundreds of startups avoid costly errors
               </p>
             </div>
           </div>
@@ -40,286 +41,170 @@ export default function CommonMistakesPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                The Hard Truth About Tech Startups
+                The Path Is Full of Pitfalls
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                Over 90% of tech startups fail. While failure can teach valuable lessons, 
-                it's better to learn from others' experiences. Here are six critical mistakes
-                that repeatedly sink promising tech ventures, backed by data and real-world examples.
+                Starting a new venture is exhilarating, but it&apos;s also fraught with challenges that can derail even the most promising ideas. After working with hundreds of early-stage founders, we&apos;ve identified the most common mistakes that trip up first-time entrepreneurs. Understanding these pitfalls won&apos;t guarantee success, but it will significantly improve your odds.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Mistake 1: Overengineering Solutions */}
-        <section className="relative bg-indigo-900/40 py-24">
+        {/* Mistake Groups Section */}
+        <section className="relative py-24 bg-indigo-900/30">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-amber-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-amber-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">1</span>
+            <div className="mx-auto max-w-2xl lg:max-w-4xl">
+              <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+                {mistakeGroups.map((group) => (
+                  <div key={group.title} className="bg-slate-800 bg-opacity-70 p-8 rounded-lg">
+                    <div className="aspect-[3/2] overflow-hidden rounded-lg">
+                      <Image
+                        src={group.image}
+                        alt={group.title}
+                        className="h-full w-full object-cover object-center"
+                        width={400}
+                        height={266}
+                      />
                     </div>
+                    <h3 className="mt-8 text-2xl font-bold tracking-tight text-white">
+                      {group.title}
+                    </h3>
+                    <p className="mt-4 text-lg text-gray-300">
+                      {group.description}
+                    </p>
                   </div>
-                </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Overengineering Solutions
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Many founders fall in love with their solution rather than being obsessed with the problem. 
-                    They build elaborate products with excessive features that don't address a significant market need.
-                  </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>Difficulty articulating who your customer is and what problem you're solving</li>
-                    <li>Building features without customer validation</li>
-                    <li>Low engagement metrics after launch</li>
-                    <li>Engineering team focused on technical elegance rather than user value</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Begin with collaborative service design that brings together all disciplines: engineering, 
-                    product, sales, and business stakeholders. Map the entire user journey and focus on 
-                    validating the core problem before committing to specific solutions.
-                  </p>
-                  <p className="text-lg text-slate-300">
-                    Interview at least 50 potential users before writing a single line of code. 
-                    Create a simple MVP to test your assumptions, and be ready to adapt based on real feedback. 
-                    Remember that a working solution to a real problem is always better than a perfect solution 
-                    to a non-existent one.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mistake 2: Premature Scaling */}
-        <section className="relative bg-slate-900/80 py-24">
+        {/* Building Mistakes Section */}
+        <section className="relative py-24 bg-slate-800/60">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-indigo-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">2</span>
-                    </div>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-12 text-center">
+                Building Mistakes
+              </h2>
+              
+              {buildingMistakes.map((mistake, i) => (
+                <div key={mistake.title} className="mb-16 border-l-4 border-indigo-500 pl-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {i + 1}. {mistake.title}
+                  </h3>
+                  <p className="text-lg text-slate-300 mb-6">
+                    {mistake.description}
+                  </p>
+                  <div className="bg-slate-800 p-6 rounded-lg">
+                    <h4 className="text-lg font-semibold text-indigo-400 mb-3">
+                      Better Approach:
+                    </h4>
+                    <p className="text-slate-300">
+                      {mistake.betterApproach}
+                    </p>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Premature Scaling
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Spending money too quickly before validating product-market fit is a death sentence. 
-                    Many startups hire too many people, build complex infrastructure, or overspend on 
-                    marketing before having a repeatable business model.
-                  </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>High burn rate with limited traction</li>
-                    <li>Hiring specialists for future problems</li>
-                    <li>Overbuilding technology infrastructure</li>
-                    <li>Customer acquisition costs exceed lifetime value</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300">
-                    Focus on the metrics that matter earliest in your journey: retention and engagement 
-                    rather than user count. Maintain a lean team until you have clear product-market fit.
-                    Outsource or use fractional resources for specialized needs.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Mistake 3: Technical Debt Overload */}
-        <section className="relative bg-amber-900/30 py-24">
+        {/* GTM Mistakes Section */}
+        <section className="relative py-24 bg-indigo-900/30">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-slate-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-slate-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">3</span>
-                    </div>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-12 text-center">
+                Go-to-Market Mistakes
+              </h2>
+              
+              {gtmMistakes.map((mistake, i) => (
+                <div key={mistake.title} className="mb-16 border-l-4 border-indigo-500 pl-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {i + 1}. {mistake.title}
+                  </h3>
+                  <p className="text-lg text-slate-300 mb-6">
+                    {mistake.description}
+                  </p>
+                  <div className="bg-slate-800 p-6 rounded-lg">
+                    <h4 className="text-lg font-semibold text-indigo-400 mb-3">
+                      Better Approach:
+                    </h4>
+                    <p className="text-slate-300">
+                      {mistake.betterApproach}
+                    </p>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Technical Debt Overload
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    In the race to build quickly, many startups accumulate crippling technical debt. 
-                    Short-term decisions create long-term problems that eventually stall innovation
-                    and make the codebase unmaintainable.
-                  </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>Simple features taking increasingly longer to implement</li>
-                    <li>High bug rate and regression issues</li>
-                    <li>Developer turnover due to frustration</li>
-                    <li>No automated testing or deployment processes</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Start with proper service design that involves all company disciplines: engineering, 
-                    sales, and business stakeholders. Cross-functional collaboration early in the 
-                    development process helps identify potential technical challenges before they become debt.
-                  </p>
-                  <p className="text-lg text-slate-300">
-                    Aim for the right balance between speed and quality. Allocate 20% of development time 
-                    to refactoring and paying down technical debt. Implement basic DevOps practices early, 
-                    including automated testing and continuous integration.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Mistake 4: Poor Team Dynamics */}
-        <section className="relative bg-slate-800/60 py-24">
+        {/* Funding Mistakes Section */}
+        <section className="relative py-24 bg-slate-800/60">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-amber-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-amber-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">4</span>
-                    </div>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-12 text-center">
+                Funding Mistakes
+              </h2>
+              
+              {fundingMistakes.map((mistake, i) => (
+                <div key={mistake.title} className="mb-16 border-l-4 border-indigo-500 pl-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {i + 1}. {mistake.title}
+                  </h3>
+                  <p className="text-lg text-slate-300 mb-6">
+                    {mistake.description}
+                  </p>
+                  <div className="bg-slate-800 p-6 rounded-lg">
+                    <h4 className="text-lg font-semibold text-indigo-400 mb-3">
+                      Better Approach:
+                    </h4>
+                    <p className="text-slate-300">
+                      {mistake.betterApproach}
+                    </p>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Poor Team Dynamics
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Co-founder conflicts and poor team dynamics are responsible for 23% of startup failures.
-                    The stress of startup life magnifies interpersonal issues and can lead to toxic culture.
-                  </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>Unclear decision-making processes</li>
-                    <li>Misaligned incentives among founders</li>
-                    <li>Communication breakdowns between tech and business teams</li>
-                    <li>Avoidance of difficult conversations</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300">
-                    Create clear governance structures and decision-making frameworks early. 
-                    Have regular founder check-ins separate from operational meetings.
-                    Consider working with a startup coach or advisor to navigate team dynamics.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Mistake 5: Ignoring User Feedback */}
-        <section className="relative bg-indigo-800/30 py-24">
+        {/* Quote Section */}
+        <section className="relative bg-slate-900 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-slate-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-slate-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">5</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Ignoring User Feedback
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Many founders fall into the trap of confirmation bias, only hearing feedback that 
-                    confirms their preexisting beliefs. They filter out negative signals that could 
-                    help them course-correct.
+            <div className="mx-auto max-w-2xl">
+              <figure className="mt-10">
+                <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
+                  <p>
+                    &ldquo;The difference between successful people and very successful people is that very successful people say &apos;no&apos; to almost everything.&rdquo;
                   </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>No systematic process for collecting user feedback</li>
-                    <li>Dismissing criticism as "users don't understand our vision"</li>
-                    <li>Building features based on internal opinions rather than data</li>
-                    <li>High churn rates without understanding the root causes</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300">
-                    Implement regular user interviews and feedback sessions. Create a culture where negative 
-                    feedback is valued. Tie product decisions to user metrics and observed behaviors, not 
-                    just what users say they want.
-                  </p>
-                </div>
-              </div>
+                </blockquote>
+                <figcaption className="mt-10">
+                  <div className="font-semibold text-white">Warren Buffett</div>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
 
-        {/* Mistake 6: Overlooking Regulatory and Compliance Issues */}
-        <section className="relative bg-slate-900/70 py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-12">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="h-64 w-64 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                    <div className="h-48 w-48 rounded-full bg-indigo-500/40 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">6</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-2/3">
-                  <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-                    Overlooking Regulatory and Compliance Issues
-                  </h2>
-                  <p className="text-lg text-slate-300 mb-4">
-                    Technology startups often encounter unexpected regulatory hurdles that derail their 
-                    business model. From data privacy laws to industry-specific regulations, compliance 
-                    issues can stop a promising startup in its tracks.
-                  </p>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">Warning Signs:</h3>
-                  <ul className="list-disc list-inside text-slate-300 space-y-2">
-                    <li>No legal counsel specialized in your industry</li>
-                    <li>Collecting sensitive data without proper protocols</li>
-                    <li>Entering regulated markets without understanding the landscape</li>
-                    <li>Rapid international expansion without considering local laws</li>
-                  </ul>
-                  <h3 className="text-xl font-semibold text-amber-400 mt-6 mb-2">The Solution:</h3>
-                  <p className="text-lg text-slate-300">
-                    Engage with regulatory experts early in your journey. Build compliance into your 
-                    product architecture from the beginning. Stay informed about regulatory changes in 
-                    your industry and allocate resources for compliance as you scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
+        {/* Conclusion */}
         <section className="relative bg-gradient-to-b from-slate-800 to-slate-900 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Don't Navigate These Challenges Alone
+                Navigate Your Journey More Wisely
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300 mb-8">
-                At Real Handy, we've helped dozens of startups avoid these critical mistakes. 
-                Our fractional CTO and technical leadership services provide the expertise you 
-                need without the full-time executive cost.
+                Every successful founder makes mistakes along the way. The goal isn&apos;t to eliminate all errors—it&apos;s to avoid the most costly ones and learn quickly from the rest. At Real Handy, we provide the guidance and technical leadership to help you navigate these challenges with greater confidence.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
-                  className="rounded-md bg-amber-500 px-8 py-3 text-lg font-semibold text-slate-900 shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+                  className="rounded-md bg-indigo-500 px-8 py-3 text-lg font-semibold text-slate-900 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                 >
                   Schedule a Call
                 </a>
-                <a href="/#roles" className="text-lg font-semibold leading-6 text-white hover:text-amber-300">
+                <a href="/#roles" className="text-lg font-semibold leading-6 text-white hover:text-indigo-300">
                   Learn about our services <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -331,3 +216,96 @@ export default function CommonMistakesPage() {
     </>
   );
 }
+
+// Data arrays for the page content
+const mistakeGroups = [
+  {
+    title: "Building Mistakes",
+    description: "Errors in product development that lead to wasted time, resources, and opportunity cost.",
+    image: "/images/building.jpg"
+  },
+  {
+    title: "Go-to-Market Mistakes",
+    description: "Missteps in launching and positioning your product that limit traction and growth.",
+    image: "/images/gtm.jpg"
+  },
+  {
+    title: "Funding Mistakes",
+    description: "Poor decisions about when, how, and from whom to raise capital that compromise long-term success.",
+    image: "/images/funding.jpg"
+  },
+  {
+    title: "Team Mistakes",
+    description: "Hiring and structure issues that create inefficiency, conflict, and eventual team breakdown.",
+    image: "/images/team.jpg"
+  }
+];
+
+const buildingMistakes = [
+  {
+    title: "Building in Stealth for Too Long",
+    description: "Many first-time founders spend months or even years building their product in isolation, afraid that someone will steal their idea. They emerge with something that doesn&apos;t address actual market needs.",
+    betterApproach: "Get feedback early and often. Start with a minimal version that addresses the core problem, and iterate based on user input. Remember that execution matters more than the idea itself."
+  },
+  {
+    title: "Perfectionism Before Launch",
+    description: "Obsessing over every feature and detail before launch, often causing significant delays and burning through cash reserves.",
+    betterApproach: "Embrace the concept of a Minimum Viable Product (MVP). Focus on solving the core problem exceptionally well, and plan to add refinements after you&apos;ve validated market interest."
+  },
+  {
+    title: "Feature Creep",
+    description: "Continuously adding &quot;nice-to-have&quot; features that dilute focus and complicate the user experience.",
+    betterApproach: "Maintain a relentless focus on your core value proposition. For every new feature, ask whether it directly contributes to solving your primary user problem. If not, put it on the backlog."
+  },
+  {
+    title: "Premature Scaling",
+    description: "Building complex infrastructure and systems before you&apos;ve validated product-market fit.",
+    betterApproach: "Use existing tools and services in the early stages. Focus technical resources on the unique aspects of your solution rather than rebuilding what&apos;s already available off-the-shelf."
+  }
+];
+
+const gtmMistakes = [
+  {
+    title: "Targeting Too Broad a Market",
+    description: "Trying to appeal to everyone results in appealing to no one. Products that attempt to serve too broad a market often lack the specificity needed to solve any particular user&apos;s problem effectively.",
+    betterApproach: "Start with a clearly defined niche where you can deliver exceptional value. Once you&apos;ve established a foothold, you can expand to adjacent markets."
+  },
+  {
+    title: "Underinvesting in Customer Discovery",
+    description: "Assuming you understand customer needs without thorough research, leading to products that miss the mark.",
+    betterApproach: "Invest time in customer interviews before and during development. Develop detailed personas and use cases based on actual conversations, not assumptions."
+  },
+  {
+    title: "Weak Differentiation",
+    description: "Failing to clearly articulate why your solution is meaningfully different from alternatives, resulting in difficulty gaining traction against established competitors.",
+    betterApproach: "Identify and emphasize your unique value proposition. Be specific about which aspect of the problem you solve better than anyone else, even if your overall solution has fewer features."
+  },
+  {
+    title: "Overcomplicating the Message",
+    description: "Creating complex messaging that fails to quickly communicate your core value proposition.",
+    betterApproach: "Refine your pitch until you can explain what you do and why it matters in one or two sentences. Test your messaging with people outside your industry to ensure clarity."
+  }
+];
+
+const fundingMistakes = [
+  {
+    title: "Raising Too Much Too Soon",
+    description: "Taking on more capital than necessary in early stages, which dilutes founder ownership and creates unrealistic growth expectations before product-market fit.",
+    betterApproach: "Raise only what you need to reach your next meaningful milestone. Consider alternative funding sources like revenue-based financing, grants, or strategic partnerships."
+  },
+  {
+    title: "Optimizing for Valuation Over Partner Quality",
+    description: "Choosing investors based primarily on valuation rather than their ability to add value beyond capital.",
+    betterApproach: "Select investors who bring relevant expertise, connections, and support for your specific industry and stage. A slightly lower valuation from the right partner is often worth the trade-off."
+  },
+  {
+    title: "Neglecting Runway Management",
+    description: "Poor cash flow planning that results in urgent fundraising from a position of weakness.",
+    betterApproach: "Maintain a detailed financial model with regular updates. Plan fundraising to begin at least 6-9 months before you&apos;ll need capital, so you&apos;re negotiating from a position of strength."
+  },
+  {
+    title: "Ignoring Alternative Growth Paths",
+    description: "Assuming venture capital is the only viable path to growth, when many successful businesses bootstrap or use alternative funding models.",
+    betterApproach: "Consider whether your business model could support customer-funded growth. Not every successful company needs venture capital, and many thrive with alternative approaches."
+  }
+];

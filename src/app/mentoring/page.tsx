@@ -82,7 +82,7 @@ export default function MentoringPage() {
                     <h3 className="text-xl font-semibold text-white mb-4">Tailored Development Plan</h3>
                     <p className="text-slate-300">
                       We begin with a thorough assessment of your current skills, challenges, and goals. 
-                      Together, we'll create a personalized mentoring plan focused on your specific needs 
+                      Together, we&apos;ll create a personalized mentoring plan focused on your specific needs 
                       and the outcomes that matter most to your career and organization.
                     </p>
                   </div>
@@ -109,7 +109,7 @@ export default function MentoringPage() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-4">Real-World Application</h3>
                     <p className="text-slate-300">
-                      Between sessions, apply what you've learned with specific actionable tasks. 
+                      Between sessions, apply what you&apos;ve learned with specific actionable tasks. 
                       We focus on immediate application to your current role, ensuring the mentoring 
                       translates to tangible results and observable growth.
                     </p>
@@ -196,9 +196,9 @@ export default function MentoringPage() {
               <div className="grid gap-8">
                 <div className="bg-slate-900/60 p-8 rounded-lg">
                   <p className="text-slate-300 italic mb-6">
-                    "The mentoring I received was transformative. I went from constantly putting out fires to 
+                    &ldquo;The mentoring I received was transformative. I went from constantly putting out fires to 
                     actually leading my team with confidence and vision. My mentor helped me see blind spots 
-                    I didn't know I had and gave me practical strategies to address them."
+                    I didn&apos;t know I had and gave me practical strategies to address them.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="h-12 w-12 rounded-full bg-indigo-600/50 mr-4"></div>
@@ -211,10 +211,10 @@ export default function MentoringPage() {
                 
                 <div className="bg-slate-900/60 p-8 rounded-lg">
                   <p className="text-slate-300 italic mb-6">
-                    "As a technical founder, I was struggling to balance coding with leading the company. 
+                    &ldquo;As a technical founder, I was struggling to balance coding with leading the company. 
                     My mentor helped me create systems that allowed me to step back from day-to-day 
-                    development while still maintaining technical oversight. It's completely changed how 
-                    I run my business."
+                    development while still maintaining technical oversight. It&apos;s completely changed how 
+                    I run my business.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="h-12 w-12 rounded-full bg-amber-600/50 mr-4"></div>

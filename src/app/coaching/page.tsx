@@ -325,7 +325,7 @@ export default function CoachingPage() {
                   <div className="bg-slate-800/60 p-6 rounded-lg">
                     <h3 className="text-xl font-semibold text-amber-500 mb-4">Engineering Departments</h3>
                     <p className="text-slate-300">
-                      Improve delivery capability, reduce technical debt, and establish processes that scale with your organization's growth.
+                      Improve delivery capability, reduce technical debt, and establish processes that scale with your organization&apos;s growth.
                     </p>
                   </div>
                   

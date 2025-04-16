@@ -64,7 +64,7 @@ export default function CoachingCurriculumPage() {
                         <h3 className="text-xl font-semibold text-indigo-400 mb-2">Session 1</h3>
                         <h4 className="text-white font-medium mb-3">Leadership Foundations & Assessment</h4>
                         <p className="text-slate-300 text-sm">
-                          Initial assessment of current leadership strengths, growth areas, and personal style. We'll establish your leadership vision and identify key development goals.
+                          Initial assessment of current leadership strengths, growth areas, and personal style. We&apos;ll establish your leadership vision and identify key development goals.
                         </p>
                       </div>
                     </div>
@@ -130,7 +130,7 @@ export default function CoachingCurriculumPage() {
                         <h3 className="text-xl font-semibold text-amber-400 mb-2">Homework 3</h3>
                         <h4 className="text-white font-medium mb-3">Decision Framework Application</h4>
                         <p className="text-slate-300 text-sm">
-                          Document a significant decision using a structured decision-making framework. Create a prioritization matrix for your current projects/responsibilities. Practice saying "no" constructively.
+                          Document a significant decision using a structured decision-making framework. Create a prioritization matrix for your current projects/responsibilities. Practice saying &quot;no&quot; constructively.
                         </p>
                       </div>
                     </div>
