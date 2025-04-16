@@ -30,7 +30,7 @@ export default async function ArticlesPage() {
         navigation={navigation}
       />
       <div className="container mx-auto py-16 px-4 bg-gray-900 text-gray-50">
-        <h1 className="text-6xl font-bold mb-8 font-light text-amber-500">Conversations</h1>
+        <h1 className="text-6xl font-bold mb-8 text-amber-500">Conversations</h1>
         <p className="mb-8 text-xl leading-8 text-gray-300">A collection of conversation starters for founders, CEOs, and tech leaders. Find a topic that resonates with you? Feel free to reach out to us to start an assesment.</p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
