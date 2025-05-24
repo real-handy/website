@@ -1,90 +1,131 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+import { useState, useRef } from "react";
+import { Navbar } from "@/components/Navbar";
+import { Link } from "react-router";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Hero } from "@/components/layout/Hero";
+import { Services } from "@/components/layout/Services";
 
 export function Welcome({ message }: { message: string }) {
+  // Create refs for each section including the intro
+  const introSectionRef = useRef<HTMLElement | null>(null);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  
+  // Setup for intersection observer to track which section is visible
+  const [activeSection, setActiveSection] = useState(-1);
+  
+  // Handle scroll dot navigation
+  const scrollToSection = (index: number) => {
+    if (index === -1 && introSectionRef.current) {
+      introSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (sectionRefs.current[index]) {
+      sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
+    <div className="relative bg-background">
+      <Navbar />
+      
+      {/* Intro Section */}
+      <section ref={introSectionRef}>
+        <Hero
+          title="Leadership"
+          description="RealHandy offers a suite of services that mold to your organization's unique needs"
+          primaryButtonText="Explore Our Services"
+          primaryButtonAction={() => scrollToSection(0)}
+          secondaryButtonText="Contact Us"
+          secondaryButtonLink="/contact"
+        />
+      </section>
+      
+      {/* Service sections with modern design */}
+      <Services 
+        sectionRefs={sectionRefs}
+        scrollToSection={scrollToSection}
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        introSectionRef={introSectionRef}
+      />
+      
+      {/* Summary cards above footer */}
+      <section className="py-24 bg-gradient-to-b from-background to-background/90">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-50 dark:to-gray-300">
+              Why Choose RealHandy
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Experience-driven leadership solutions with a proven track record of success
             </p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-              <li className="self-stretch p-3 leading-normal">{message}</li>
-            </ul>
-          </nav>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="bg-background/50 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-all overflow-hidden group">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="mb-6 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8V16" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 12H16" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Experience That Matters</h3>
+                <p className="text-muted-foreground mb-6">
+                  Decades of hands-on leadership experience across startups, scale-ups, and enterprise organizations.
+                </p>
+                <div className="mt-auto">
+                  <Button variant="ghost" size="sm" className="text-primary" asChild>
+                    <Link to="/about">Learn about our approach</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-background/50 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-all overflow-hidden group">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="mb-6 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Servant Leadership</h3>
+                <p className="text-muted-foreground mb-6">
+                  We believe in servant leadership principles that put your organization's needs at the forefront.
+                </p>
+                <div className="mt-auto">
+                  <Button variant="ghost" size="sm" className="text-primary" asChild>
+                    <Link to="/services">Explore our philosophy</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-background/50 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-all overflow-hidden group">
+              <CardContent className="p-8 flex flex-col h-full">
+                <div className="mb-6 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M22 4L12 14.01L9 11.01" stroke="var(--realhandy-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Measurable Results</h3>
+                <p className="text-muted-foreground mb-6">
+                  We focus on driving tangible outcomes with clear metrics and accountability frameworks.
+                </p>
+                <div className="mt-auto">
+                  <Button variant="ghost" size="sm" className="text-primary" asChild>
+                    <Link to="/contact">Discuss your needs</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+    </div>
   );
 }
-
-const resources = [
-  {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
